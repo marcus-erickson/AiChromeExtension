@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Reminder</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="icons/icon16.png">
+</head>
+<body>
+  <div class="container">
+    <div class="prompt-card">
+      <div class="ai-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+          <!-- Main large sparkle -->
+          <path d="M32 12L38 26L52 32L38 38L32 52L26 38L12 32L26 26L32 12Z" fill="#E59819"/>
+          
+          <!-- Top right small sparkle -->
+          <path d="M48 16L50 20L54 22L50 24L48 28L46 24L42 22L46 20L48 16Z" fill="#F4B942"/>
+          
+          <!-- Bottom left small sparkle -->
+          <path d="M16 42L18 46L22 48L18 50L16 54L14 50L10 48L14 46L16 42Z" fill="#F4B942"/>
+          
+          <!-- Top left tiny sparkle -->
+          <path d="M20 18L21 20L23 21L21 22L20 24L19 22L17 21L19 20L20 18Z" fill="#F4B942"/>
+          
+          <!-- Bottom right tiny sparkle -->
+          <path d="M44 44L45 46L47 47L45 48L44 50L43 48L41 47L43 46L44 44Z" fill="#F4B942"/>
+          
+          <!-- Middle right tiny sparkle -->
+          <path d="M52 32L53 34L55 35L53 36L52 38L51 36L49 35L51 34L52 32Z" fill="#F4B942"/>
+        </svg>
+      </div>
+      <h1 class="prompt-text">Have you thought about doing this with AI?</h1>
+      
+      <!-- AI Tool Buttons -->
+      <div class="ai-buttons">
+        <a href="https://chat.openai.com" target="_blank" class="ai-button chatgpt">
+          <span class="ai-button-icon">🤖</span>
+          <span class="ai-button-text">ChatGPT</span>
+        </a>
+        <a href="https://www.anthropic.com" target="_blank" class="ai-button claude">
+          <span class="ai-button-icon">✨</span>
+          <span class="ai-button-text">Claude</span>
+        </a>
+      </div>
+      
+      <div class="buttons">
+        <button id="yes-button" class="button primary">Not for this</button>
+        <button id="no-button" class="button secondary">More AI tools</button>
+      </div>
+      <div id="suggestions" class="suggestions hidden">
+        <h2>More AI tools:</h2>
+        <div class="ai-tools">
+          <div class="tool-grid">
+            <a href="https://v0.dev" target="_blank" class="tool-button">
+              <span class="tool-icon">🎨</span>
+              <span class="tool-name">v0</span>
+              <span class="tool-desc">UI Design</span>
+            </a>
+            <a href="https://www.perplexity.ai" target="_blank" class="tool-button">
+              <span class="tool-icon">🔍</span>
+              <span class="tool-name">Perplexity</span>
+              <span class="tool-desc">AI Search</span>
+            </a>
+            <a href="https://colab.research.google.com" target="_blank" class="tool-button">
+              <span class="tool-icon">📊</span>
+              <span class="tool-name">Colab</span>
+              <span class="tool-desc">Google Research</span>
+            </a>
+            <a href="https://sana.ai" target="_blank" class="tool-button">
+              <span class="tool-icon">🧠</span>
+              <span class="tool-name">Sana</span>
+              <span class="tool-desc">AI Assistant</span>
+            </a>
+          </div>
+        </div>
+        <div class="google-option">
+          <p>Or use traditional search:</p>
+          <a href="https://www.google.com" target="_blank" class="google-button">
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google" class="google-logo">
+          </a>
+        </div>
+      </div>
+      <div class="time-container">
+        <div id="current-time" class="current-time"></div>
+        <div id="current-date" class="current-date"></div>
+      </div>
+    </div>
+  </div>
+  <script src="newtab.js"></script>
+</body>
+</html>
