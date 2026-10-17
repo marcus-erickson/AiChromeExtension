@@ -33,6 +33,9 @@
   --courses-neon: #00F0FF;
   --google-neon: #E0FF00;
   --muse-neon: #FF7A1A;
+  --supabase-neon: #3ECF8E;
+  --render-neon: #9D7BFF;
+  --notebooklm-neon: #F2F2F2;
 }
 
 * {
@@ -386,6 +389,24 @@ body {
   --glow-rgb: 255, 122, 26;
 }
 .ai-card.muse .card-icon { color: var(--muse-neon); }
+
+.ai-card.supabase {
+  --card-neon: var(--supabase-neon);
+  --glow-rgb: 62, 207, 142;
+}
+.ai-card.supabase .card-icon { color: var(--supabase-neon); }
+
+.ai-card.render {
+  --card-neon: var(--render-neon);
+  --glow-rgb: 157, 123, 255;
+}
+.ai-card.render .card-icon { color: var(--render-neon); }
+
+.ai-card.notebooklm {
+  --card-neon: var(--notebooklm-neon);
+  --glow-rgb: 242, 242, 242;
+}
+.ai-card.notebooklm .card-icon { color: var(--notebooklm-neon); }
 
 .ai-card.google {
   --card-neon: var(--google-neon);
