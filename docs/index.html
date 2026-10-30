@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Command Deck</title>
+<meta name="description" content="A Chrome extension that replaces your new tab page with a launchpad for AI tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#eef1f4;
+  --card:#ffffff;
+  --ink:#14202b;
+  --muted:#506070;
+  --line:#d3dae1;
+  --blue:#2b5bd7;
+  --blue-soft:#e4ebfb;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0f1720;
+    --card:#17212c;
+    --ink:#e8eef4;
+    --muted:#9db0c1;
+    --line:#2a3846;
+    --blue:#7da2ff;
+    --blue-soft:#1b2a4a;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--blue)}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.brand{font-family:var(--head);font-weight:800;font-size:19px;color:var(--ink);text-decoration:none}
+header a.gh{color:var(--muted);text-decoration:none;font-weight:500}
+header a.gh:hover{color:var(--ink)}
+h1{font-family:var(--head);font-weight:800;font-size:clamp(38px,6vw,60px);line-height:1.04;letter-spacing:-.03em;margin:48px 0 18px}
+.lede{font-size:19px;color:var(--muted);max-width:34em;margin:0 0 28px}
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:600;text-decoration:none;margin-right:10px;margin-bottom:10px}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.ghost{border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+section{padding:52px 0 0}
+h2{font-family:var(--head);font-weight:700;font-size:clamp(25px,3.4vw,32px);letter-spacing:-.02em;margin:0 0 14px}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+ul.plain{list-style:none;padding:0;margin:0}
+ul.plain li{padding:12px 0;border-top:1px solid var(--line)}
+ul.plain li b{font-weight:600}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.tool b{display:block;font-weight:600}
+.tool span{color:var(--muted);font-size:15px}
+ol{padding-left:22px;margin:0}
+ol li{padding:4px 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:var(--blue-soft);padding:2px 6px;border-radius:5px}
+footer{margin-top:64px;border-top:1px solid var(--line);padding:24px 0 48px;color:var(--muted);font-size:15px}
+footer a{margin-right:18px}
+@media (max-width:640px){
+  .tools{grid-template-columns:1fr 1fr}
+}
+@media (max-width:420px){
+  .wrap{padding:0 16px}
+  .tools{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="#top">AI Command Deck</a>
+    <a class="gh" href="https://github.com/marcus-erickson/AiChromeExtension">GitHub</a>
+  </header>
+
+  <main id="top">
+    <h1>What will you build today?</h1>
+    <p class="lede">A Chrome extension that replaces your new tab page with a launchpad for AI tools. Every new tab puts your favorites one click away, so opening an AI assistant becomes the default.</p>
+    <a class="btn primary" href="https://github.com/marcus-erickson/AiChromeExtension/archive/refs/heads/main.zip">Download ZIP</a>
+    <a class="btn ghost" href="#install">How to install</a>
+    <a class="btn ghost" href="https://github.com/marcus-erickson/AiChromeExtension">View the code</a>
+
+    <section>
+      <h2>What it does</h2>
+      <ul class="plain">
+        <li><b>One-click launchpad.</b> A grid of cards linking to popular AI and developer tools. Links open in the current tab.</li>
+        <li><b>Live clock and date.</b> Updates every second in your locale.</li>
+        <li><b>More tools row.</b> A collapsible set of secondary links.</li>
+        <li><b>No permissions, no tracking.</b> The extension requests no permissions, stores no data and runs no analytics.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Included links</h2>
+      <div class="tools">
+        <div class="tool"><b>Claude</b><span>Thinking partner</span></div>
+        <div class="tool"><b>ChatGPT</b><span>GPT models</span></div>
+        <div class="tool"><b>Gemini</b><span>Google AI</span></div>
+        <div class="tool"><b>Grok</b><span>xAI</span></div>
+        <div class="tool"><b>Claude Design</b><span>Visual builder</span></div>
+        <div class="tool"><b>Lovable</b><span>App builder</span></div>
+        <div class="tool"><b>Courses</b><span>Anthropic Academy</span></div>
+        <div class="tool"><b>Muse</b><span>AI video</span></div>
+        <div class="tool"><b>Google</b><span>Search</span></div>
+        <div class="tool"><b>Supabase</b><span>Database dashboard</span></div>
+        <div class="tool"><b>Render</b><span>Hosting dashboard</span></div>
+        <div class="tool"><b>NotebookLM</b><span>Research notes</span></div>
+      </div>
+      <p class="muted">The more tools row adds v0, Perplexity, Colab, Sana, Anthropic and OpenAI.</p>
+    </section>
+
+    <section id="install">
+      <h2>Install</h2>
+      <p class="muted">The extension loads unpacked. In Chrome it appears as <b>AI Reminder</b>.</p>
+      <ol>
+        <li>Download the <a href="https://github.com/marcus-erickson/AiChromeExtension/archive/refs/heads/main.zip">ZIP</a> and unzip it, or clone the <a href="https://github.com/marcus-erickson/AiChromeExtension">repository</a>.</li>
+        <li>Open <code>chrome://extensions</code>.</li>
+        <li>Turn on <b>Developer mode</b> in the top right.</li>
+        <li>Click <b>Load unpacked</b> and select the repository folder.</li>
+        <li>Open a new tab.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Customize</h2>
+      <ul class="plain">
+        <li><b>Add or remove a tool.</b> Edit the <code>ai-card</code> blocks in <code>newtab.html</code>, or the <code>extra-btn</code> links for the more tools row. Copy a block, then change the link, name, description and icon.</li>
+        <li><b>Change colors.</b> Edit <code>styles.css</code>. Each card has its own class, such as <code>.claude</code>, for per-brand colors.</li>
+        <li><b>Tweak the clock or particles.</b> Edit <code>newtab.js</code>.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/marcus-erickson/AiChromeExtension">Source on GitHub</a>
+    <a href="https://github.com/marcus-erickson/AiChromeExtension/issues">Report an issue</a>
+    <p style="margin-top:12px">All product names belong to their respective owners. This project is not affiliated with any listed service.</p>
+  </footer>
+</div>
+</body>
+</html>
